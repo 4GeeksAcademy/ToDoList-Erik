@@ -13,6 +13,10 @@ const ToDo = () => {
 	}
 
 	const handleOnClick = () => {
+		if(inputValue === ""){
+			alert("You must write something")
+			return
+		}
 		setToDos([...toDos, inputValue]);
 		setInputValue("");
 	}
@@ -34,7 +38,7 @@ const ToDo = () => {
 				<ul>
 					{toDos.length > 0 ? toDos.map((toDo, index) => {
 						return(
-							<li key={index}>{toDo}<button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button></li>
+							<li className="list-item" key={index}>{toDo}<button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button></li>
 						)
 					})
 				 : <p>No tasks yet</p>}

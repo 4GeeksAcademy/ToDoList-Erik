@@ -55,7 +55,15 @@ input {
     background-color: #F87171;
     color: #ffffff;
     padding: 3px 9px;
-    margin-left: 2rem;
+    margin-left: 1.8rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.list-item:hover .delete-btn {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity .2s ease;
 }
 
 .empty {
